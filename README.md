@@ -7,7 +7,7 @@ Objectif : collecter les adresses IP de divers serveurs qui ne sont pas équipé
 Goal: Retrieve the various IP addresses of servers that do not have a fixed IP address.
 
 1) Préparation SQL :
-
+<br/>
 hmd@amia26:~$ sudo mysql -u root -p
 mysql> create database ip_db;
 mysql> use ip_db;
