@@ -109,7 +109,7 @@ $db_name = "dbs12656493";
         <input type="submit" value="Se connecter">
     </form>
     
-    Don't have an account?  registration not alloed <!--<a href="register.php" >Sign up</a>.-->
+    Don't have an account?  registration <!--not--> allowed <a href="register.php" >Sign up</a>.
     
 </body>
 </html>
