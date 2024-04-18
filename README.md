@@ -18,7 +18,8 @@ CREATE TABLE ips_users (<br/>
     password VARCHAR(255) NOT NULL<br/>
 );<br/>
 <br/>
- 
+ admin user as username: admin  password: adminSWS
+
 CREATE TABLE ips_table (<br/>
     id INT AUTO_INCREMENT PRIMARY KEY,<br/>
     user_id INT NOT NULL,<br/>
@@ -28,9 +29,9 @@ CREATE TABLE ips_table (<br/>
     FOREIGN KEY (user_id) REFERENCES ips_users(id)<br/>
 );<br/>
 <br/>
-2) Copier les fichier dans le repertoire du site <br/>
+3) Copier les fichier dans le repertoire du site <br/>
 IP-Harvest-MultiUser dans votre site<br/>
-3) Enregistrement :<br/>
+4) Enregistrement :<br/>
   http://ips.amia.fr/register.php<br/>
   création d'un username et un passord.<br/>
 5) Acces au accueil index.php<br/>
