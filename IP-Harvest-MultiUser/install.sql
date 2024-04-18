@@ -5,7 +5,7 @@ CREATE TABLE ips_users (
     password VARCHAR(255) NOT NULL
 );
 --admin user as username: admin  password: adminSWS 
-INSERT INTO `ips_users` (`id`, `activated`, `username`, `password`) VALUES (NULL, '1', 'admin', '$2y$10$I5hgwm0whGjqs500/ya4WeODfiaOKcIfs6OxseYNzebvcSF2UZxXa') 
+INSERT INTO `ips_users` (`id`, `activated`, `username`, `password`) VALUES (NULL, '1', 'admin', '$2y$10$I5hgwm0whGjqs500/ya4WeODfiaOKcIfs6OxseYNzebvcSF2UZxXa') ;
     
 --ALTER TABLE ips_users
 --ADD COLUMN activated TINYINT(1) NOT NULL DEFAULT 0;
