@@ -2,7 +2,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 session_start();
- 
+ include_once 'config.php'; // Inclure le fichier config.php
+
 /**
 CREATE TABLE ips_users (
     id INT AUTO_INCREMENT PRIMARY KEY,
