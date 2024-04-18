@@ -34,6 +34,7 @@ CREATE TABLE ips_table (<br/>
   http://ips.amia.fr/register.php<br/>
   création d'un username et un passord.<br/>
 5) Acces au accueil index.php<br/>
+    http://ips.amia.fr/<br/>
    login username et un passord.<br/>
    <br/>
 4) Acces au DashBoard.php :<br/>
