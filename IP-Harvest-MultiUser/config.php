@@ -5,7 +5,7 @@
  
 $servername = "localhost";
 $db_username = "htmc";
-$db_password = "gjetfm26";
+$db_password = "gjet";
 $db_name = "ips_db";
  
 ?>
