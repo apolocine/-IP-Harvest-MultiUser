@@ -28,8 +28,8 @@ CREATE TABLE ips_table (<br/>
     FOREIGN KEY (user_id) REFERENCES ips_users(id)<br/>
 );<br/>
 <br/>
-2) Copier les fichier dans le repertoire du site 
-
+2) Copier les fichier dans le repertoire du site <br/>
+IP-Harvest-MultiUser dans votre site<br/>
 3) Enregistrement :<br/>
   http://ips.amia.fr/register.php<br/>
   création d'un username et un passord.<br/>
