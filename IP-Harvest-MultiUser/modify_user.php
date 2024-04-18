@@ -17,12 +17,7 @@ if (!isset($_POST['user_id'])) {
 
 // Récupère l'identifiant de l'utilisateur à modifier depuis le formulaire
 $user_id = $_POST['user_id'];
-
-// Connexion à la base de données (à personnaliser avec vos propres informations de connexion)
-$servername = "db5015489964.hosting-data.io";
-$db_username = "dbu719104";
-$db_password = "AWeefoo@26";
-$db_name = "dbs12656493";
+ 
 
 $conn = new mysqli($servername, $db_username, $db_password, $db_name);
 
