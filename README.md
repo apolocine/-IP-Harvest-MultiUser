@@ -18,7 +18,9 @@ CREATE TABLE ips_users (<br/>
     password VARCHAR(255) NOT NULL<br/>
 );<br/>
 <br/>
- admin user as username: admin  password: adminSWS
+--admin user as username: admin  password: adminSWS <br/>
+INSERT INTO `ips_users` (`id`, `activated`, `username`, `password`) VALUES (NULL, '1', 'admin', '$2y$10$I5hgwm0whGjqs500/ya4WeODfiaOKcIfs6OxseYNzebvcSF2UZxXa') ;<br/>
+    
 
 CREATE TABLE ips_table (<br/>
     id INT AUTO_INCREMENT PRIMARY KEY,<br/>
