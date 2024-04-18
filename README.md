@@ -33,7 +33,7 @@ CREATE TABLE ips_table (<br/>
 3) Enregistrement :
   http://ips.amia.fr/register.php
   création d'un username et un passord.
-5) Acces au acueil intex.php
+5) Acces au accueil index.php
    login username et un passord.
    
 4) Acces au DashBoard.php :
