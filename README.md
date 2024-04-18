@@ -21,7 +21,7 @@ CREATE TABLE ips_users (<br/>
 --admin user as username: admin  password: adminSWS <br/>
 INSERT INTO `ips_users` (`id`, `activated`, `username`, `password`) VALUES (NULL, '1', 'admin', '$2y$10$I5hgwm0whGjqs500/ya4WeODfiaOKcIfs6OxseYNzebvcSF2UZxXa') ;<br/>
     
-
+<br/><br/>
 CREATE TABLE ips_table (<br/>
     id INT AUTO_INCREMENT PRIMARY KEY,<br/>
     user_id INT NOT NULL,<br/>
