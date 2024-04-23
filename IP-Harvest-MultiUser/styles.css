@@ -1,0 +1,58 @@
+  #sendip-content {
+            border: 5px solid;
+            border-color: green; /* Couleur par défaut pour la bordure */
+        }
+        
+        
+/* Style pour le textarea */
+.textarea-container {
+  margin-bottom: 20px;
+}
+
+.textarea-content {
+  display: none;
+}
+
+.textarea-button {
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: background-color 0.3s; /* Animation de transition */
+  background-color: chartreuse;
+   border-radius: 10px; /* Coins arrondis */
+}
+
+.textarea-button.active {
+  background-color: #ddd3d7; /* Couleur de fond active */
+}
+.textarea-button:hover {
+  animation: pulse 0.5s infinite alternate; /* Animation de clignotement */
+}
+button:hover {
+  animation: pulse 0.5s infinite alternate; /* Animation de clignotement */
+}
+@keyframes pulse {
+  from {
+    background-color: chartreuse; /* Couleur de fond normale */
+    color: black; /* Couleur du texte normale */
+  }
+  to {
+    background-color: #aaa; /* Couleur de fond au survol */
+    color: white; /* Couleur du texte au survol */
+  }
+}
+
+
+.textarea {
+  width: 100%;
+  height: 200px;
+  resize: none;
+  border: 2px solid transparent;
+}
+
+.textarea.active {
+  border-color: green;
+}
