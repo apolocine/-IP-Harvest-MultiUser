@@ -45,13 +45,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['logout'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tableau de bord</title>
     
-    <style>
-        #sendip-content {
-            border: 5px solid;
-            border-color: green; /* Couleur par défaut pour la bordure */
-        }
-    </style>
-    
+ <link rel="stylesheet" href="styles.css">
+  
 </head>
 <body>
     <h2>Tableau de bord</h2>
@@ -80,7 +75,98 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['logout'])) {
      <p>  <!-- <a href="sendip.php.txt">sendip.php</a> --><br/>
      
      <h2>Contenu de sendip.php</h2>
-    <textarea id="sendip-content" rows="10" cols="50" readonly><?php echo htmlspecialchars(file_get_contents("sendip.php")); ?></textarea>
+     
+    
+
+
+<!-- ?php echo htmlspecialchars(file_get_contents("sendip.php")); ? -->
+<div class="textarea-container">
+  <button class="textarea-button" onclick="toggleTextarea()">Voir le text du fichier à télécharger</button>
+  <div class="textarea-content" id="textareaContent">
+  
+  
+    <textarea id="sendip-content" rows="10" cols="50" class="textarea" readonly>    
+     <?php 
+// Vérifier si l'utilisateur est connecté
+if (isset($_SESSION['username'])) {
+    // Lire le contenu du fichier sendip.php
+    $file_content = file_get_contents("sendip.php");
+
+    // Remplacer les valeurs de $ip_username et $ip_password par les valeurs de la personne connectée
+    $file_content = str_replace('$ip_username = \'a\';', '$ip_username = \'' . $_SESSION['username'] . '\';', $file_content);
+    $file_content = str_replace('$ip_password = "a";', '$ip_password = "' . $_SESSION['password'] . '";', $file_content);
+
+    // Afficher le contenu modifié dans le textarea
+    echo "$file_content";
+} else {
+    echo "Utilisateur non connecté.";
+}
+?>
+    </textarea>
+    
+    </div>
+</div>
+
+ 
+    
+    <script>
+var buttonColors = ['red', '#cccccc', '#dddddd']; // Liste de couleurs
+var currentColorIndex = 0; // Index de la couleur actuelle
+
+
+/**
+cette fonction va lire le fichier php sans l'éxecuter.
+*/
+function toggleTextarea() {
+  var textareaContent = document.getElementById("textareaContent");
+  var textareaButton = document.querySelector(".textarea-button");
+  var textarea = textareaContent.querySelector(".textarea");
+
+  if (textareaContent.style.display === "none") {
+    textareaContent.style.display = "block";
+    textareaButton.classList.add("active");
+    textarea.classList.add("active");
+  } else {
+    textareaContent.style.display = "none";
+    textareaButton.classList.remove("active");
+    textarea.classList.remove("active");
+  }
+
+  // Changer la couleur du bouton
+  currentColorIndex = (currentColorIndex + 1) % buttonColors.length;
+  textareaButton.style.backgroundColor = buttonColors[currentColorIndex];
+}
+</script>
+    
+    <script>
+    /**
+cette fonction va lire le fichier php et  l'éxecuter avec la API fetch
+*/
+function toggleTextarea___() {
+  var textareaContent = document.getElementById("textareaContent");
+  var textareaButton = document.querySelector(".textarea-button");
+  var textarea = textareaContent.querySelector(".textarea");
+
+  if (textareaContent.style.display === "none") {
+    textareaContent.style.display = "block";
+    textareaButton.classList.add("active");
+    textarea.classList.add("active");
+    fetch('sendip.php')
+      .then(response => response.text())
+      .then(data => {
+        textarea.value = data;
+      })
+      .catch(error => console.error('Erreur :', error));
+      
+  } else {
+    textareaContent.style.display = "none";
+    textareaButton.classList.remove("active");
+    textarea.classList.remove("active");
+  }
+}
+</script>
+    
+    
     <br>
     <button onclick="toggleEditable()" id="edit-toggle">Activer l'édition</button>
   <a id="download-link" href="" download="sendip.php"><button>Télécharger le fichier sendip.php</button></a>
@@ -209,7 +295,8 @@ if ($_SESSION['username'] == 'admin' && $_SESSION['password'] == 'adminSWS') {
     }
    echo '<a href="register.php" >Sign up</a>';
     // Fermer la connexion à la base de données
-    $conn->close();
+ 
+ $conn->close();
 } else {
    
 
